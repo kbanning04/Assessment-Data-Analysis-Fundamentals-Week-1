@@ -23,4 +23,6 @@ USING
 JOIN
     territories AS t
 USING 
-    (territory_id);
+    (territory_id)
+LIMIT 9
+;

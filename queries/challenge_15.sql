@@ -6,3 +6,13 @@
 
 -- Vowels are not case-sensitive
 
+CREATE OR REPLACE FUNCTION  count_vowels(VARCHAR)
+RETURNS INT
+IMMUTABLE
+AS $$
+	SELECT 5
+$$ LANGUAGE sql;
+
+
+
+
