@@ -2,3 +2,18 @@
 
 -- Results should be ordered alphabetically by category_name and product_name
 
+SELECT
+    c.category_name,
+    p.product_name
+FROM 
+    products AS p
+JOIN 
+    categories AS c
+ON 
+    p.category_id = c.category_id
+WHERE
+    p.product_name ILIKE 's%'
+ORDER BY 
+    c.category_name ASC, p.product_name ASC
+;
+
