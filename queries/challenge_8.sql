@@ -8,3 +8,16 @@
 
 -- When calculating the order price, ignore any discounts and use the warehouse-standard price for the products only
 
+SELECT
+    o.order_id,
+    floor(SUM((unit_price * quantity))::integer) AS total_price
+FROM 
+    order_details AS o
+GROUP BY 
+    o.order_id
+HAVING
+    SUM((unit_price * quantity)) > (SELECT MAX(unit_price) FROM products)
+ORDER BY 
+    order_id DESC
+LIMIT 10;
+;
