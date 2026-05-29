@@ -10,3 +10,17 @@
 
 -- Territory lists should be lists, not concatenated strings
 
+
+SELECT
+    e.first_name || ' ' || e.last_name AS employee,
+    l.territory_id AS assigned_territories
+FROM
+    employees AS e
+JOIN 
+    employee_territories AS l
+USING
+    (employee_id)
+JOIN
+    territories AS t
+USING 
+    (territory_id);
